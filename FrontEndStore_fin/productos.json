@@ -1,0 +1,25 @@
+[
+    {
+        "id": "producto1",
+        "titulo": "Cuore",
+        "imagen": "../fonts/Imagenes/IMG_20240607_155209.jpg",
+        "descripcion": "Pendiente de resina UV con decoración en el centro de una base de acero en tono dorado. La base del pendiente es un aro dorado.",
+        "categoria": {
+            "nombre": "Pendientes",
+            "id": "pendientes"
+        },
+        "precio": "8€"
+    },
+
+    {
+        "id": "producto2",
+        "titulo": "Medusa",
+        "imagen": "../fonts/Imagenes/IMG_20240623_111432.jpg",
+        "descripcion": "Pendiente con una pieza de resina en colores azul y blanco, con una pieza de acero dorado en forma de medusa y base de acero dorada texturizada",
+        "categoria": {
+            "nombre": "Pendientes",
+            "id": "pendientes"
+        },
+        "precio": "12€"
+    }
+]
