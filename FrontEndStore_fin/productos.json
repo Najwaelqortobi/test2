@@ -1,5 +1,7 @@
-[
-    {
+{
+    "productos": [
+        {
+
         "id": "producto1",
         "titulo": "Cuore",
         "imagen": "../fonts/Imagenes/IMG_20240607_155209.jpg",
@@ -23,3 +25,4 @@
         "precio": "12€"
     }
 ]
+}

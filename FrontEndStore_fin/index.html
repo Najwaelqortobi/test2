@@ -69,53 +69,102 @@
 
     <main class="contenedor">
         <div id="dateTimeDisplay">Cargando...</div>
-        <h1 data-translate="principal">Nuestros Productos</h1>
+        <h1 data-translate="principal" id="producto-nombre">Nuestros Productos</h1>
 
         <div id="contenedor-productos" class="grid">
 
-            <div class="producto" id="producto0">
-                <a href="producto.html" data-nombre="Palmier" data-imagen="../fonts/Imagenes/IMG_20240607_075802.jpg" data-precio="12€">
-                    <img class="producto__imagen" src="../fonts/Imagenes/IMG_20240607_075802.jpg" alt="imagen ">
+            <div class="producto" data-id="producto0">
+                <a href="producto.html?id=producto0" data-nombre="Palmier" data-imagen="../fonts/Imagenes/IMG_20240607_075802.jpg" data-precio="12€">
+                    <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240607_075802.jpg" alt="imagen ">
                     <div class="producto__informacion">
+                        <h2>test</h2>
                         <p class="producto__nombre">Palmier</p>
-                        <p class="producto__precio">12€</p>
+                        <p class="producto__precio" id="producto-precio">12€</p>
                     </div>
+                    <form>
+                        <select>
+                            <option value="rojo">Rojo</option>
+                            <option value="azul">Azul</option>
+                            <option value="verde">Verde</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                    </form>
                 </a>
-            </div>  <!--.producto-->
-            <div class="producto" id="producto1">
-                <a href="producto.html" data-nombre="Cuore" data-imagen="../fonts/Imagenes/IMG_20240607_155209.jpg" data-precio="8€">
+            </div>
+            <!--.producto   esta listo-->
+            
+            <div class="producto" data-id="producto1">
+                <a href="producto.html?id=producto1&nombre=Cuore&precio=8€&imagen=../fonts/Imagenes/IMG_20240607_155209.jpg">
                     <img class="producto__imagen" src="../fonts/Imagenes/IMG_20240607_155209.jpg" alt="imagen ">
+                </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Cuore</p>
+                        <h2 class="producto__nombre">Cuore</h2>
+                        <p class="producto_contenido">kjgtfnbjgbj</p>
                         <p class="producto__precio">8€</p>
                     </div>
-                </a>
+                    <form>
+                        <select>
+                            <option value="rojo">Rojo</option>
+                            <option value="azul">Azul</option>
+                            <option value="verde">Verde</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                    </form>
+                
             </div>  <!--.producto-->
-            <div class="producto" id="producto2">
+            
+            <div class="producto" data-id="producto2">
                 <a href="producto.html" data-nombre="Medusa" data-imagen="../fonts/Imagenes/IMG_20240623_111432.jpg" data-precio="12€">
                     <img class="producto__imagen" src="../fonts/Imagenes/IMG_20240623_111432.jpg" alt="imagen ">
                     <div class="producto__informacion">
+                        <h2>test</h2>
                         <p class="producto__nombre">Medusa</p>
                         <p class="producto__precio">12€</p>
                     </div>
+                    <form>
+                        <select>
+                            <option value="rojo">Rojo</option>
+                            <option value="azul">Azul</option>
+                            <option value="verde">Verde</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                    </form>
                 </a>
             </div>  <!--.producto-->
-            <div class="producto">
+            <div class="producto" data-id="producto3">
                 <a href="producto.html">
                     <img class="producto__imagen producto_imagen--hawaii" src="../fonts/Imagenes/IMG_20240716_120551.jpg" alt="imagen ">
                     <div class="producto__informacion">
+                        <h2>test</h2>
                         <p class="producto__nombre">Pulsera Flor</p>
                         <p class="producto__precio">6€</p>
                     </div>
+                    <form>
+                        <select>
+                            <option value="rojo">Rojo</option>
+                            <option value="azul">Azul</option>
+                            <option value="verde">Verde</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                    </form>
                 </a>
             </div>  <!--.producto-->
-            <div class="producto">
+            <div class="producto" data-id="producto4">
                 <a href="producto.html">
                     <img class="producto__imagen" src="../fonts/Imagenes/IMG_20240731_070046.jpg" alt="imagen ">
                     <div class="producto__informacion">
+                        <h2>test</h2>
                         <p class="producto__nombre">Baldosa Bilbao</p>
                         <p class="producto__precio">10€</p>
                     </div>
+                    <form>
+                        <select>
+                            <option value="rojo">Rojo</option>
+                            <option value="azul">Azul</option>
+                            <option value="verde">Verde</option>
+                            <option value="amarillo">Amarillo</option>
+                        </select>
+                    </form>
                 </a>
             </div>  <!--.producto-->
             <div class="producto">
@@ -263,6 +312,36 @@
         </div>
         <p class="footer__derechos">Todos los derechos Reservados © 2025</p>
     </footer>
-   <script src="../js/script.js"></script>
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(element => {
+        element.addEventListener('click', function(e) {
+            if (e.target.tagName === 'IMG') { 
+                // <!--e.target Verifica si el elemento clicado (e.target) es una imagen.-->
+                  // tagname para devolver el nbr del etiqueta en mayuscula que es mas practico en javascript 
+                const productoId = this.getAttribute('data-id');
+                const colorSeleccionado = this.querySelector('select').value;
+                const descripcion = this.querySelector('p').textContent;
+                const titulo = this.querySelector('h2').textContent;
+                window.location.href = `producto.html?id=${productoId}&color=${colorSeleccionado}&descripcion=${encodeURIComponent(descripcion)}&titulo=${encodeURIComponent(titulo)}`;
+            }
+           
+            // La propiedad window.location.href en JavaScript se utiliza para obtener o establecer la URL actual de la página web. 
+            //la siguiente parte de esta linea nos muestra como sera la url el id sera el id del producto que es   const productoId = this.getAttribute('data-id');
+            //y el color sera la varibale colorSeleccionado y encodeURIComponent es un codigo que se pone en la url ..........
+        });
+    });
+});
+        </script>
+    
 </body>
 </html>
