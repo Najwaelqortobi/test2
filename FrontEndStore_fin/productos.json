@@ -7,9 +7,10 @@
         "imagen": "../fonts/Imagenes/IMG_20240607_155209.jpg",
         "descripcion": "Pendiente de resina UV con decoración en el centro de una base de acero en tono dorado. La base del pendiente es un aro dorado.",
         "categoria": {
-            "nombre": "Pendientes",
-            "id": "pendientes"
+        "nombre": "Pendientes",
+        "id": "pendientes"
         },
+        "colores": ["rojo", "azul", "verde", "amarillo"],
         "precio": "8€"
     },
 
@@ -22,6 +23,7 @@
             "nombre": "Pendientes",
             "id": "pendientes"
         },
+        "colores": ["rojo", "azul", "verde", "amarillo"],
         "precio": "12€"
     }
 ]
